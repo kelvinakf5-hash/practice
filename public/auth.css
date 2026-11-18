@@ -1,0 +1,231 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: #e63946;
+    --black: #101014;
+    --white: #fff;
+    --muted: #aaa;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: var(--white);
+}
+
+/* FULL SCREEN BACKGROUND IMAGE */
+
+.auth-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* BLURRED CAR BACKGROUND */
+
+.auth-container::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    z-index: -2;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(9px);
+    transform: scale(1.05);
+}
+
+/* DARK OVERLAY */
+
+.auth-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: rgba(0, 0, 0, 0.65);
+}
+
+/* FORM CARD */
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+
+    background: rgba(15, 15, 19, 0.82);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+    position: relative;
+    z-index: 1;
+}
+
+/* VELOCITY AUTO LOGO */
+
+.logo {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+/* HEADINGS */
+
+.auth-card h1 {
+    text-align: center;
+    font-size: 29px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* INPUT FIELDS */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid #414149;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.form-group input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+/* BUTTON */
+
+button {
+    width: 100%;
+    padding: 15px;
+
+    background: var(--red);
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c92d39;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* REGISTER / LOGIN LINK */
+
+.switch-page {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.switch-page a {
+    color: var(--red);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.switch-page a:hover {
+    text-decoration: underline;
+}
+
+/* FEEDBACK */
+
+.message {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.message.success {
+    color: #45d483;
+}
+
+.message.error {
+    color: #ff5965;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 28px 20px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .auth-card h1 {
+        font-size: 25px;
+    }
+}

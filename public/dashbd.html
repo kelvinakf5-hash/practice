@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Velocity Auto | Student Dashboard</title>
+
+    <link rel="stylesheet" href="dashbd.css">
+    <script src="dashbd.js" defer></script>
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="background-slideshow">
+        <div class="slide active"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div>
+
+    <div class="background-overlay"></div>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo">
+                VELOCITY<span>AUTO</span>
+            </div>
+
+            <div class="profile">
+                <div class="profile-icon" id="profileInitials">VA</div>
+
+                <div>
+                    <h3 id="userName">Loading...</h3>
+                    <p id="userEmail">Loading account...</p>
+                </div>
+            </div>
+
+            <nav>
+                <p class="nav-heading">MENU</p>
+
+                <a href="#overview" class="nav-link active">
+                    <span>⌂</span> Dashboard
+                </a>
+
+                <a href="buycar.html" class="nav-link">
+                    <span>🚘</span> Browse Cars
+                </a>
+
+                <a href="showroom.html" class="nav-link">
+                    <span>♡</span> Showroom
+                </a>
+
+                <a href="#activity" class="nav-link">
+                    <span>◷</span> Recent Activity
+                </a>
+
+                <p class="nav-heading">ACCOUNT</p>
+
+                <a href="#account" class="nav-link">
+                    <span>⚙</span> My Account
+                </a>
+
+                <button type="button" class="nav-link logout" id="logoutBtn">
+                    <span>↪</span> Logout
+                </button>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>VELOCITY AUTO</p>
+                <small>Drive Beyond Limits.</small>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content" id="overview">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <button class="menu-btn" id="menuBtn" type="button">
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+                    Dashboard / Overview
+                </div>
+
+                <div class="top-actions">
+                    <span class="notification">♢</span>
+                    <div class="top-profile" id="topInitials">VA</div>
+                </div>
+
+            </header>
+
+            <!-- WELCOME -->
+            <section class="welcome">
+
+                <div>
+                    <p class="welcome-label">
+                        YOUR AUTOMOTIVE EXPERIENCE
+                    </p>
+
+                    <h1>
+                        Welcome,
+                        <span id="welcomeName">Loading...</span>
+                    </h1>
+
+                    <p class="welcome-text">
+                        Discover exceptional vehicles and experience
+                        luxury, performance and innovation.
+                    </p>
+
+                    <div class="welcome-buttons">
+                        <a href="buycar.html" class="primary-btn">
+                            EXPLORE VEHICLES
+                        </a>
+
+                        <a href="#favorites" class="secondary-btn">
+                            MY FAVORITES
+                        </a>
+                    </div>
+
+                    <p id="dashboardMessage" role="status"></p>
+                </div>
+
+            </section>
+
+            <!-- STATISTICS -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <span>🚘</span>
+                    <p>Featured Vehicles</p>
+                    <h2 id="vehicleCount">3</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>♡</span>
+                    <p>My Favorites</p>
+                    <h2 id="favoriteCount">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>⭐</span>
+                    <p>Account Status</p>
+                    <h2 id="accountStatus">Active</h2>
+                </div>
+
+            </section>
+
+            <!-- FEATURED VEHICLES -->
+            <section class="vehicles-section" id="vehicles">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="section-label">
+                            EXPLORE OUR COLLECTION
+                        </p>
+
+                        <h2>Featured Vehicles</h2>
+                    </div>
+
+                    <input
+                        type="search"
+                        id="carSearch"
+                        placeholder="Search vehicles..."
+                        aria-label="Search vehicles"
+                    >
+                </div>
+
+                <div class="car-grid" id="carGrid">
+
+                    <article class="car-card" data-name="Porsche 911">
+                        <img
+                            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
+                            alt="Porsche 911"
+                            loading="lazy"
+                        >
+
+                        <div class="car-info">
+                            <h3>Porsche 911</h3>
+                            <p>Luxury Sports Car</p>
+
+                            <div class="car-bottom">
+                                <span>Premium</span>
+
+                                <button
+                                    type="button"
+                                    class="favorite-btn"
+                                    data-car="Porsche 911"
+                                    aria-label="Add Porsche 911 to favorites"
+                                >♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="car-card" data-name="Mercedes-Benz">
+                        <img
+                            src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8"
+                            alt="Mercedes-Benz"
+                            loading="lazy"
+                        >
+
+                        <div class="car-info">
+                            <h3>Mercedes-Benz</h3>
+                            <p>Executive Luxury</p>
+
+                            <div class="car-bottom">
+                                <span>Luxury</span>
+
+                                <button
+                                    type="button"
+                                    class="favorite-btn"
+                                    data-car="Mercedes-Benz"
+                                    aria-label="Add Mercedes-Benz to favorites"
+                                >♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="car-card" data-name="BMW M Series">
+                        <img
+                            src="https://images.unsplash.com/photo-1555215695-3004980ad54e"
+                            alt="BMW M Series"
+                            loading="lazy"
+                        >
+
+                        <div class="car-info">
+                            <h3>BMW M Series</h3>
+                            <p>Performance Vehicle</p>
+
+                            <div class="car-bottom">
+                                <span>Sport</span>
+
+                                <button
+                                    type="button"
+                                    class="favorite-btn"
+                                    data-car="BMW M Series"
+                                    aria-label="Add BMW M Series to favorites"
+                                >♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p id="emptyMessage" hidden>
+                    No matching vehicles found.
+                </p>
+
+            </section>
+
+            <!-- FAVORITES -->
+            <section class="activity" id="favorites">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="section-label">YOUR COLLECTION</p>
+                        <h2>My Favourite Vehicles</h2>
+                    </div>
+                </div>
+
+                <div id="favoritesList" class="activity-card">
+                    <div class="activity-icon">♡</div>
+                    <div>
+                        <h4>No favourites yet</h4>
+                        <p>Click the heart on a vehicle to save it here.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ACCOUNT INFORMATION -->
+            <section class="activity" id="account">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="section-label">YOUR DATABASE PROFILE</p>
+                        <h2>My Account</h2>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-icon">👤</div>
+
+                    <div>
+                        <h4 id="accountName">Loading...</h4>
+                        <p id="accountEmail">Loading...</p>
+                        <p id="accountCreated">Account information loading...</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- RECENT ACTIVITY -->
+            <section class="activity" id="activity">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="section-label">YOUR ACCOUNT</p>
+                        <h2>Recent Activity</h2>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-icon">🚘</div>
+
+                    <div>
+                        <h4>Welcome to Velocity Auto</h4>
+                        <p>
+                            Your dashboard is ready.
+                            Start exploring our vehicles.
+                        </p>
+                    </div>
+
+                    <span>Today</span>
+                </div>
+
+            </section>
+
+            <footer>
+                © 2026 Velocity Auto. All Rights Reserved.
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
